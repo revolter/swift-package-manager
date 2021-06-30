@@ -453,11 +453,11 @@ def install_swiftpm(prefix, args):
     # Install the PackageDescription/CompilerPluginSupport libraries and associated modules.
     dest = os.path.join(prefix, "lib", "swift", "pm", "ManifestAPI")
     install_dylib(args, "PackageDescription", dest, ["PackageDescription", "CompilerPluginSupport"])
+    install_dylib(args, "PackageManifest", dest, ["PackageManifest"])
 
     # Install the PackagePlugin library and associated modules.
     dest = os.path.join(prefix, "lib", "swift", "pm", "PluginAPI")
     install_dylib(args, "PackagePlugin", dest, ["PackagePlugin"])
-
 
 # Helper function that installs a dynamic library and a set of modules to a particular directory.
 def install_dylib(args, library_name, install_dir, module_names):
